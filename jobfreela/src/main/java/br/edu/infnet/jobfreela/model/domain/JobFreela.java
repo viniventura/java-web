@@ -6,5 +6,5 @@ public class JobFreela {
 	String descricaoResumida;
 	String descricaoCompleta;
 	LocalDateTime dataPublicacao;
-	float valorPago;
+	float valor;
 }
