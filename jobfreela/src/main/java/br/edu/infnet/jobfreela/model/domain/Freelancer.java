@@ -10,6 +10,8 @@ public class Freelancer {
 	private String email;
 	private LocalDateTime dataNascimento;
 	
+	private List<PrestacaoServicoFreela> servicosFreela;
+	
 	public Freelancer(String nome, String cpf, String email, LocalDateTime dataNascimento) {
 		this.nome = nome;
 		this.cpf = cpf;
@@ -29,6 +31,8 @@ public class Freelancer {
 		sb.append(email);
 		sb.append(";");
 		sb.append(dataNascimento.format(dateTimeFormat));
+		sb.append(";");
+		sb.append(servicosFreela.size());
 		
 		return sb.toString();
 	}
@@ -52,6 +56,8 @@ public class Freelancer {
 	public List<PrestacaoServicoFreela> getServicosFreela() {
 		return servicosFreela;
 	}
-
-	private List<PrestacaoServicoFreela> servicosFreela;
+	
+	public void setServicosFreela(List<PrestacaoServicoFreela> servicosFreela) {
+		this.servicosFreela = servicosFreela;
+	}
 }
