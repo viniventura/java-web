@@ -1,5 +1,6 @@
 package br.edu.infnet.jobfreela.model.domain;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -13,11 +14,11 @@ public class Freelancer {
 	
 	private List<PrestacaoServicoFreela> servicosFreela;
 	
-	public Freelancer(String nome, String cpf, String email, LocalDateTime dataNascimento) {
+	public Freelancer(String nome, String cpf, String email, String dataNascimento) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;
-		this.dataNascimento = dataNascimento;
+		this.dataNascimento = LocalDate.parse(dataNascimento, DateTimeFormatter.ofPattern("uuuu-MM-dd")).atStartOfDay();
 	}
 	
 	@Override

@@ -1,5 +1,6 @@
 package br.edu.infnet.jobfreela.model.domain;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -18,6 +19,13 @@ public class PrestacaoServicoFreela {
 		this.dataInicio = LocalDateTime.now();
 		this.dataFim = null;
 		this.emDia = true;
+	}
+	
+	public PrestacaoServicoFreela(String descricao, String dataFim, boolean emDia) {
+		this.descricao = descricao;
+		this.dataInicio = LocalDateTime.now();
+		this.dataFim = LocalDate.parse(dataFim, DateTimeFormatter.ofPattern("uuuu-MM-dd")).atStartOfDay();
+		this.emDia = emDia;
 	}
 	
 	@Override
