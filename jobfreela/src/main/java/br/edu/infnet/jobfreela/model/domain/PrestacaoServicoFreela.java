@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class PrestacaoServicoFreela {
+	private Integer id;
 	private String descricao;
 	private LocalDateTime dataInicio;
 	private LocalDateTime dataFim;
@@ -30,6 +31,14 @@ public class PrestacaoServicoFreela {
 				emDia ? "em dia": "atrasado"
 		);
 	}
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public String getDescricao() {
 		return descricao;
@@ -38,9 +47,13 @@ public class PrestacaoServicoFreela {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
+
 	public LocalDateTime getDataInicio() {
 		return dataInicio;
+	}
+
+	public void setDataInicio(LocalDateTime dataInicio) {
+		this.dataInicio = dataInicio;
 	}
 
 	public LocalDateTime getDataFim() {

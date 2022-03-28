@@ -12,13 +12,13 @@
 </head>
 <body>
 	<div class="container mt-3">
-		<h2>Listar Jobs Freela de Apps</h2>
-		<form action="/jobs-freela-app/cadastrar">
-			<button type="submit" class="btn btn-primary mt-3">Novo Job Freela App</button>
+		<h2>Listar Jobs Freela Web</h2>
+		<form action="/jobs-freela-web/cadastrar">
+			<button type="submit" class="btn btn-primary mt-3">Novo Job Freela Web</button>
 		</form>
 	
-		<c:if test="${not empty jobsFreelaApp}">
-			<p class="mt-3 mb-3">Listagem de Jobs Freela de Apps (${jobsFreelaApp.size()}):</p>            
+		<c:if test="${not empty jobsFreelaWeb}">
+			<p class="mt-3 mb-3">Listagem de Jobs Freela Web (${jobsFreelaWeb.size()}):</p>            
 		  	<table class="table table-striped">
 			    <thead>
 			      <tr>
@@ -26,14 +26,15 @@
 				  	<th>Descrição Resumida</th>
 				    <th>Data de Publicação</th>
 				    <th>Valor Hora</th>
-			        <th>Plataformas Suportadas</th>
+			        <th>Browsers Suportados</th>
 			        <th>Integrações com APIs</th>
+			        <th>Site Responsivo?</th>
 			        <th>Parte Pronta?</th>
 			        <th>Ação</th>
 			      </tr>
 			    </thead>
 			    <tbody>
-			    	<c:forEach var="job" items="${jobsFreelaApp}">
+			    	<c:forEach var="job" items="${jobsFreelaWeb}">
 				      <tr>
 				      	<td>${job.id}</td>
 				        <td>${job.descricaoResumida}</td>
@@ -42,17 +43,18 @@
 							<fmt:formatDate pattern="dd/MM/yyyy" value="${parsedDataPublicacao}" />
 				        </td>
 				        <td>${job.valorHora}</td>
-				        <td>${fn:join(job.plataformasSuportadas, ", ")}</td>
+				        <td>${fn:join(job.browsersSuportados, ", ")}</td>
 				        <td>${fn:join(job.integracoesAPIs, ", ")}</td>
+				        <td>${job.siteResponsivo ? "Sim" : "Não"}</td>
 				        <td>${job.partePronta ? "Sim" : "Não"}</td>
-				        <td><a href="/jobs-freela-app/${job.id}/excluir">Excluir</a></td>
+				        <td><a href="/jobs-freela-web/${job.id}/excluir">Excluir</a></td>
 				      </tr>
 			      </c:forEach>
 			    </tbody>
 		  	</table>
 		</c:if>
 		
-		<c:if test="${empty jobsFreelaApp}">
+		<c:if test="${empty jobsFreelaWeb}">
 	  		<p class="mt-3">Nenhum registro localizado.</p>
 	  	</c:if>
 	</div>

@@ -8,11 +8,43 @@
 <title>Sistema de Gerenciamento de Jobs Freela</title>
 </head>
 <body>
-	<h2>Cadastro de jobs freelancers de revisão de texto</h2>
-	
-	<form action="/job-freela-rev-texto/incluir" method="post">
-		<!-- Campos do formulário virão nessa parte -->
-		<button type="submit" class="btn btn-primary">Incluir</button>
-	</form>
+	<div class="container mt-3">
+		<h2>Cadastro de Jobs Freelancers de Revisão de Texto</h2>
+		
+		<form action="/jobs-freela-rev-texto/cadastrar" method="post">
+		
+			<div class="mt-3 mb-3">
+		      <label for="descricaoResumida" class="mb-2">Descrição resumida:</label>
+		      <input type="text" class="form-control" name="descricaoResumida" placeholder="Entre com a descrição resumida">
+		    </div>
+		    
+		    <div class="mt-3 mb-3">
+		      <label for="descricaoCompleta" class="mb-2">Descrição completa:</label>
+		      <textarea class="form-control" name="descricaoCompleta" rows="3" placeholder="Entre com a descrição completa"></textarea>
+		    </div>
+		    
+			<div class="mt-3 mb-3">
+	      		<label for="valorHora" class="mb-2">Valor hora:</label>
+	      		<input type="text" class="form-control" name="valorHora" placeholder="Entre com o valor hora a ser pago pelo job">
+	    	</div>
+			
+			<div class="mt-3 mb-3">
+		      <label for="idiomaTextoOrigem" class="mb-2">Idioma do texto de origem:</label>
+		      <input type="text" class="form-control" name="idiomaTextoOrigem" placeholder="Entre com o idioma do texto de origem">
+		    </div>
+		    
+		    <div class="mt-3 mb-3">
+		      <label for="idiomaTextoDestino" class="mb-2">Idioma do texto de destino:</label>
+		      <input type="text" class="form-control" name="idiomaTextoDestino" placeholder="Entre com o idioma do texto de destino">
+		    </div>
+		    
+		    <div class="mt-3 mb-3">
+		      <label for="qtdMediaPalavras" class="mb-2">Quantidade média de palavras:</label>
+		      <input type="text" class="form-control" name="qtdMediaPalavras" placeholder="Entre com a quantidade média de palavras">
+		    </div>
+				
+			<button type="submit" class="btn btn-primary">Cadastrar</button>
+		</form>
+	</div>
 </body>
 </html>

@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="container mt-3">
-		<h2>Cadastro de jobs freelancers de apps</h2>
+		<h2>Cadastro de Jobs Freelancers de Apps</h2>
 		
 		<form action="/jobs-freela-app/cadastrar" method="post">
 		

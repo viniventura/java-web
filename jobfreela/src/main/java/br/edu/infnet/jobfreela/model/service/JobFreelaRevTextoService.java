@@ -7,18 +7,18 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import br.edu.infnet.jobfreela.model.domain.JobFreelaApp;
+import br.edu.infnet.jobfreela.model.domain.JobFreelaRevisaoTexto;
 
 @Service
-public class JobFreelaAppService {
-	private static Map<Integer, JobFreelaApp> mapa = new HashMap<Integer, JobFreelaApp>();
+public class JobFreelaRevTextoService {
+	private static Map<Integer, JobFreelaRevisaoTexto> mapa = new HashMap<Integer, JobFreelaRevisaoTexto>();
 	private static Integer key = 1;
 	
-	public Collection<JobFreelaApp> listar(){	
+	public Collection<JobFreelaRevisaoTexto> listar(){	
 		return mapa.values();
 	}
 
-	public void cadastrar(JobFreelaApp job) {
+	public void cadastrar(JobFreelaRevisaoTexto job) {
 		job.setId(key++);
 		job.setDataPublicacao(LocalDateTime.now());
 		mapa.put(job.getId(), job);
@@ -28,7 +28,7 @@ public class JobFreelaAppService {
 		mapa.remove(idJob);
 	}
 	
-	public JobFreelaApp obter(Integer idJob) {
+	public JobFreelaRevisaoTexto obter(Integer idJob) {
 		return mapa.get(idJob);
 	}
 }

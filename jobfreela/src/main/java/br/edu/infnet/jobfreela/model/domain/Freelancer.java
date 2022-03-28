@@ -5,6 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class Freelancer {
+	private Integer id;
 	private String nome;
 	private String cpf;
 	private String email;
@@ -36,28 +37,52 @@ public class Freelancer {
 		
 		return sb.toString();
 	}
-	
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	public String getNome() {
 		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getCpf() {
 		return cpf;
 	}
 
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
 	public String getEmail() {
 		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public LocalDateTime getDataNascimento() {
 		return dataNascimento;
 	}
 
+	public void setDataNascimento(LocalDateTime dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
 	public List<PrestacaoServicoFreela> getServicosFreela() {
 		return servicosFreela;
 	}
-	
+
 	public void setServicosFreela(List<PrestacaoServicoFreela> servicosFreela) {
 		this.servicosFreela = servicosFreela;
-	}
+	}	
 }

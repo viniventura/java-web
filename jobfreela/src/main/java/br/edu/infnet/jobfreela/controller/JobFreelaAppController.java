@@ -13,7 +13,7 @@ import br.edu.infnet.jobfreela.model.service.JobFreelaAppService;
 @Controller
 public class JobFreelaAppController {
 	@Autowired
-	private JobFreelaAppService jobFreelaService;
+	private JobFreelaAppService jobFreelaAppService;
 	
 	@GetMapping(value = "/jobs-freela-app/cadastrar")
 	public String getIncluir() {
@@ -22,19 +22,19 @@ public class JobFreelaAppController {
 	
 	@GetMapping(value = "/jobs-freela-app")
 	public String listar(Model model) {		
-		model.addAttribute("jobsFreelaApp", jobFreelaService.listarJobsFreelaApp());	
+		model.addAttribute("jobsFreelaApp", jobFreelaAppService.listar());	
 		return "jobs-freela-app/listar";
 	}
 	
 	@GetMapping(value = "/jobs-freela-app/{idJob}/excluir")
 	public String excluir(@PathVariable Integer idJob) {
-		jobFreelaService.excluir(idJob);
+		jobFreelaAppService.excluir(idJob);
 		return "redirect:/jobs-freela-app";
 	}
 	
 	@PostMapping(value = "/jobs-freela-app/cadastrar")
 	public String postIncluir(JobFreelaApp job) {
-		jobFreelaService.cadastrar(job);
+		jobFreelaAppService.cadastrar(job);
 		return "redirect:/jobs-freela-app";
 	}
 }

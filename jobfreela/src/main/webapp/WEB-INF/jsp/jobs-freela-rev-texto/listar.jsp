@@ -12,13 +12,13 @@
 </head>
 <body>
 	<div class="container mt-3">
-		<h2>Listar Jobs Freela de Apps</h2>
-		<form action="/jobs-freela-app/cadastrar">
-			<button type="submit" class="btn btn-primary mt-3">Novo Job Freela App</button>
+		<h2>Listar Jobs Freela de Revisão de Texto</h2>
+		<form action="/jobs-freela-rev-texto/cadastrar">
+			<button type="submit" class="btn btn-primary mt-3">Novo Job Freela Revisão de Texto</button>
 		</form>
 	
-		<c:if test="${not empty jobsFreelaApp}">
-			<p class="mt-3 mb-3">Listagem de Jobs Freela de Apps (${jobsFreelaApp.size()}):</p>            
+		<c:if test="${not empty jobsFreelaRevTexto}">
+			<p class="mt-3 mb-3">Listagem de Jobs Freela de Revisão de Texto (${jobsFreelaRevTexto.size()}):</p>            
 		  	<table class="table table-striped">
 			    <thead>
 			      <tr>
@@ -26,14 +26,14 @@
 				  	<th>Descrição Resumida</th>
 				    <th>Data de Publicação</th>
 				    <th>Valor Hora</th>
-			        <th>Plataformas Suportadas</th>
-			        <th>Integrações com APIs</th>
-			        <th>Parte Pronta?</th>
+			        <th>Idioma Texto Origem</th>
+			        <th>Idioma Texto Destino</th>
+			        <th>Quantidade Média Plavras</th>
 			        <th>Ação</th>
 			      </tr>
 			    </thead>
 			    <tbody>
-			    	<c:forEach var="job" items="${jobsFreelaApp}">
+			    	<c:forEach var="job" items="${jobsFreelaRevTexto}">
 				      <tr>
 				      	<td>${job.id}</td>
 				        <td>${job.descricaoResumida}</td>
@@ -42,17 +42,17 @@
 							<fmt:formatDate pattern="dd/MM/yyyy" value="${parsedDataPublicacao}" />
 				        </td>
 				        <td>${job.valorHora}</td>
-				        <td>${fn:join(job.plataformasSuportadas, ", ")}</td>
-				        <td>${fn:join(job.integracoesAPIs, ", ")}</td>
-				        <td>${job.partePronta ? "Sim" : "Não"}</td>
-				        <td><a href="/jobs-freela-app/${job.id}/excluir">Excluir</a></td>
+				        <td>${job.idiomaTextoOrigem}</td>
+				        <td>${job.idiomaTextoDestino}</td>
+				        <td>${job.qtdMediaPalavras}</td>
+				        <td><a href="/jobs-freela-rev-texto/${job.id}/excluir">Excluir</a></td>
 				      </tr>
 			      </c:forEach>
 			    </tbody>
 		  	</table>
 		</c:if>
 		
-		<c:if test="${empty jobsFreelaApp}">
+		<c:if test="${empty jobsFreelaRevTexto}">
 	  		<p class="mt-3">Nenhum registro localizado.</p>
 	  	</c:if>
 	</div>
