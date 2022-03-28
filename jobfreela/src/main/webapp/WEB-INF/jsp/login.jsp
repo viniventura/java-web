@@ -21,12 +21,12 @@
   <form action="/login" method="post">
     <div class="mb-3 mt-3">
       <label for="email">Email:</label>
-      <input type="email" class="form-control" placeholder="Informe o seu e-mail" name="email">
+      <input type="email" class="form-control" placeholder="Informe o seu e-mail" name="email" value="vini.ventura.ti@hotmail.com">
     </div>
     
     <div class="mb-3">
       <label for="senha">Password:</label>
-      <input type="password" class="form-control" placeholder="Informe a sua senha" name="senha">
+      <input type="password" class="form-control" placeholder="Informe a sua senha" name="senha" value="vini.ventura.ti@hotmail.com">
     </div>
     
     <button type="submit" class="btn btn-primary">Submit</button>

@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public abstract class JobFreela {
+	private Integer id;
 	private String descricaoResumida;
 	private String descricaoCompleta;
 	private LocalDateTime dataPublicacao;
@@ -37,19 +38,43 @@ public abstract class JobFreela {
 		return sb.toString();
 	}
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	public String getDescricaoResumida() {
 		return descricaoResumida;
+	}
+
+	public void setDescricaoResumida(String descricaoResumida) {
+		this.descricaoResumida = descricaoResumida;
 	}
 
 	public String getDescricaoCompleta() {
 		return descricaoCompleta;
 	}
 
+	public void setDescricaoCompleta(String descricaoCompleta) {
+		this.descricaoCompleta = descricaoCompleta;
+	}
+
 	public LocalDateTime getDataPublicacao() {
 		return dataPublicacao;
 	}
 
+	public void setDataPublicacao(LocalDateTime dataPublicacao) {
+		this.dataPublicacao = dataPublicacao;
+	}
+
 	public float getValorHora() {
 		return valorHora;
+	}
+
+	public void setValorHora(float valorHora) {
+		this.valorHora = valorHora;
 	}
 }
