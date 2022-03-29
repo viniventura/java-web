@@ -53,19 +53,19 @@ public class FreelancerTeste {
 					"28/05/1990"
 		);
 		
-		PrestacaoServicoFreela prestacaoServico1 = new PrestacaoServicoFreela();
+		PrestacaoServicoFreela prestacaoServico1 = new PrestacaoServicoFreela("31/12/2022");
 		prestacaoServico1.setDescricao("Descrição da prestação de serviço 1");
 		prestacaoServico1.setEmDia(true);
 		prestacaoServico1.setFreelancer(freelancer);
 		prestacaoServico1.setJobFreela(jobFreelaApp);
 		
-		PrestacaoServicoFreela prestacaoServico2 = new PrestacaoServicoFreela();
+		PrestacaoServicoFreela prestacaoServico2 = new PrestacaoServicoFreela("31/12/2022");
 		prestacaoServico2.setDescricao("Descrição da prestação de serviço 2");
 		prestacaoServico2.setEmDia(false);
 		prestacaoServico2.setFreelancer(freelancer);
 		prestacaoServico2.setJobFreela(jobFreelaRevTexto);
 		
-		PrestacaoServicoFreela prestacaoServico3 = new PrestacaoServicoFreela();
+		PrestacaoServicoFreela prestacaoServico3 = new PrestacaoServicoFreela("31/12/2022");
 		prestacaoServico3.setDescricao("Descrição da prestação de serviço 3");
 		prestacaoServico3.setEmDia(true);
 		prestacaoServico3.setFreelancer(freelancer);

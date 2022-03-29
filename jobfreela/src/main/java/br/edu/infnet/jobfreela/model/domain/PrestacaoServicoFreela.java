@@ -14,20 +14,11 @@ public class PrestacaoServicoFreela {
 	private Freelancer freelancer;
 	private JobFreela jobFreela;
 	
-	public PrestacaoServicoFreela() {
-		this.descricao = "Descrição da prestação de serviço entre cliente e freelancer.";
+	public PrestacaoServicoFreela(String dataFim) {
 		this.dataInicio = LocalDateTime.now();
-		this.dataFim = null;
-		this.emDia = true;
+		this.dataFim =  LocalDate.parse(dataFim, DateTimeFormatter.ofPattern("uuuu-MM-dd")).atStartOfDay();
 	}
-	
-	public PrestacaoServicoFreela(String descricao, String dataFim, boolean emDia) {
-		this.descricao = descricao;
-		this.dataInicio = LocalDateTime.now();
-		this.dataFim = LocalDate.parse(dataFim, DateTimeFormatter.ofPattern("uuuu-MM-dd")).atStartOfDay();
-		this.emDia = emDia;
-	}
-	
+
 	@Override
 	public String toString() {
 		DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
@@ -68,11 +59,7 @@ public class PrestacaoServicoFreela {
 		return dataFim;
 	}
 
-	public void setDataFim(LocalDateTime dataFim) {
-		this.dataFim = dataFim;
-	}
-	
-	public boolean getEmDia() {
+	public boolean isEmDia() {
 		return emDia;
 	}
 

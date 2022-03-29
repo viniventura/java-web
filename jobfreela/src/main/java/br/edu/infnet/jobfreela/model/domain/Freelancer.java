@@ -75,10 +75,6 @@ public class Freelancer {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(LocalDateTime dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
-
 	public List<PrestacaoServicoFreela> getServicosFreela() {
 		return servicosFreela;
 	}
