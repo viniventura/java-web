@@ -15,22 +15,22 @@
 		
 			<div class="mt-3 mb-3">
 		      <label for="nome" class="mb-2">Nome:</label>
-		      <input type="text" class="form-control" name="nome" placeholder="Entre com o nome">
+		      <input type="text" class="form-control" name="nome" placeholder="Entre com o nome" value="Vinicius Santos Ventura">
 		    </div>
 		    
 		    <div class="mt-3 mb-3">
 		      <label for="cpf" class="mb-2">CPF:</label>
-		      <input type="text" class="form-control" name="cpf" placeholder="Entre com o CPF">
+		      <input type="text" class="form-control" name="cpf" placeholder="Entre com o CPF" value="12345678901">
 		    </div>
 		    
 			<div class="mt-3 mb-3">
 	      		<label for="email" class="mb-2">E-mail:</label>
-	      		<input type="email" class="form-control" name="email" placeholder="Entre com o e-mail">
+	      		<input type="email" class="form-control" name="email" placeholder="Entre com o e-mail" value="vini.ventura.ti@hotmail.com">
 	    	</div>
-			
-			<div class="mt-3 mb-3">
+	    	
+	    	<div class="mt-3 mb-3">
 	      		<label for="dataNascimento" class="mb-2">Data de nascimento:</label>
-	      		<input type="date" class="form-control" name="dataNascimento" placeholder="Entre com a data de nascimento">
+	      		<input type="date" class="form-control" name="dataNascimento" placeholder="Entre com a data de nascimento" value="1990-05-28">
 	    	</div>
 	    	
 			<button type="submit" class="btn btn-primary">Cadastrar</button>

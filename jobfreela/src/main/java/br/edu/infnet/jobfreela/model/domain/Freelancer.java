@@ -3,16 +3,27 @@ package br.edu.infnet.jobfreela.model.domain;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Freelancer")
 public class Freelancer {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
 	private String cpf;
 	private String email;
 	private LocalDateTime dataNascimento;
 	
-	private List<PrestacaoServicoFreela> servicosFreela;
+	//private List<PrestacaoServicoFreela> servicosFreela;
+	
+	public Freelancer() {}
 	
 	public Freelancer(String nome, String cpf, String email, String dataNascimento) {
 		this.nome = nome;
@@ -22,7 +33,7 @@ public class Freelancer {
 	}
 	
 	@Override
-	public String toString() {
+	public String toString() {		
 		DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		
 		StringBuilder sb = new StringBuilder();
@@ -33,8 +44,8 @@ public class Freelancer {
 		sb.append(email);
 		sb.append(";");
 		sb.append(dataNascimento.format(dateTimeFormat));
-		sb.append(";");
-		sb.append(servicosFreela.size());
+		//sb.append(";");
+		//sb.append(servicosFreela.size());
 		
 		return sb.toString();
 	}
@@ -70,16 +81,21 @@ public class Freelancer {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
+	
 	public LocalDateTime getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public List<PrestacaoServicoFreela> getServicosFreela() {
-		return servicosFreela;
+	public void setDataNascimento(String dataNascimento) {
+		this.dataNascimento = LocalDate.parse(dataNascimento, DateTimeFormatter.ofPattern("uuuu-MM-dd")).atStartOfDay();
 	}
-
-	public void setServicosFreela(List<PrestacaoServicoFreela> servicosFreela) {
-		this.servicosFreela = servicosFreela;
-	}	
+	
+	//public List<PrestacaoServicoFreela> getServicosFreela() { 
+		 //return servicosFreela; 
+	//}
+	 
+	 //public void setServicosFreela(List<PrestacaoServicoFreela> servicosFreela) {
+		 //this.servicosFreela = servicosFreela; 
+	 //}
+	 
 }

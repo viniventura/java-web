@@ -1,32 +1,33 @@
 package br.edu.infnet.jobfreela.model.service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.jobfreela.model.domain.Freelancer;
+import br.edu.infnet.jobfreela.model.repository.FreelancerRepository;
 
 @Service
 public class FreelancerService {
-	private static Map<Integer, Freelancer> mapa = new HashMap<Integer, Freelancer>();
-	private static Integer key = 1;
+	
+	@Autowired
+	private FreelancerRepository freelancerRepository;
 	
 	public Collection<Freelancer> listar(){	
-		return mapa.values();
+		return (Collection<Freelancer>) freelancerRepository.findAll();
 	}
 
 	public void cadastrar(Freelancer freelancer) {
-		freelancer.setId(key++);
-		mapa.put(freelancer.getId(), freelancer);
+		freelancerRepository.save(freelancer);
 	}
 	
 	public void excluir(Integer idFreelancer) {
-		mapa.remove(idFreelancer);
+		freelancerRepository.deleteById(idFreelancer);
 	}
 	
-	public Freelancer obter(Integer idFreelancer) {
-		return mapa.get(idFreelancer);
+	public Optional<Freelancer> obter(Integer idFreelancer) {
+		return freelancerRepository.findById(idFreelancer);
 	}
 }

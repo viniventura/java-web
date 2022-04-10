@@ -76,7 +76,7 @@ public class FreelancerTeste {
 		servicosFreela.add(prestacaoServico2);
 		servicosFreela.add(prestacaoServico3);
 		
-		freelancer.setServicosFreela(servicosFreela);
+		//freelancer.setServicosFreela(servicosFreela);
 		
 		System.out.println(freelancer);
 	}

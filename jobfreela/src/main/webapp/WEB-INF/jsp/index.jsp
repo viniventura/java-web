@@ -8,7 +8,7 @@
 <title>Sistema de Gerenciamento de Jobs Freela</title>
 </head>
 <body>
-	<h3>Vinicius Santos Ventura</h3>
+	<h3>${usuarioLogado.nome}</h3>
 	<h4>App de Gestão de Trabalhos Freelancer</h4>
 	
 	<h5><a href="/jobs-freela-app">Cadastro de jobs freelancer de apps</a></h5>
