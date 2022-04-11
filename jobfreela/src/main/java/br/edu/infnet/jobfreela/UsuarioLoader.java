@@ -22,7 +22,6 @@ public class UsuarioLoader implements ApplicationRunner {
 		usuario.setEmail("vini.ventura.ti@hotmail.com");
 		usuario.setNome("Vinicius Santos Ventura");
 		usuario.setSenha("123");
-		
 		usuarioService.incluir(usuario);
 	}
 

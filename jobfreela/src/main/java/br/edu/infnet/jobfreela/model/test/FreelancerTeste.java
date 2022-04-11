@@ -50,7 +50,7 @@ public class FreelancerTeste {
 					"Vinicius", 
 					"12345678901", 
 					"vini.ventura.ti@hotmail.com", 
-					"28/05/1990"
+					"1990-05-28"
 		);
 		
 		PrestacaoServicoFreela prestacaoServico1 = new PrestacaoServicoFreela("31/12/2022");

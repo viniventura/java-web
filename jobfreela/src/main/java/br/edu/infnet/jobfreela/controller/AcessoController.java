@@ -17,6 +17,11 @@ public class AcessoController {
 	private UsuarioService usuarioService;
 	
 	@GetMapping(value="/")
+	public String index() {
+		return "index";
+	}
+	
+	@GetMapping(value="/login")
 	public String login() {
 		return "login";
 	}
