@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +22,9 @@ public class Freelancer {
 	private String cpf;
 	private String email;
 	private LocalDateTime dataNascimento;
+	@ManyToOne
+	@JoinColumn(name = "idUsuario")
+	private Usuario usuario;
 	
 	//private List<PrestacaoServicoFreela> servicosFreela;
 	
@@ -89,13 +94,18 @@ public class Freelancer {
 	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = LocalDate.parse(dataNascimento, DateTimeFormatter.ofPattern("uuuu-MM-dd")).atStartOfDay();
 	}
-	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 	//public List<PrestacaoServicoFreela> getServicosFreela() { 
 		 //return servicosFreela; 
 	//}
 	 
 	 //public void setServicosFreela(List<PrestacaoServicoFreela> servicosFreela) {
 		 //this.servicosFreela = servicosFreela; 
-	 //}
-	 
+	 //} 
 }

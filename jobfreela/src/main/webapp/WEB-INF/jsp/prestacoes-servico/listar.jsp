@@ -5,12 +5,14 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<title>Sistema de Gerenciamento de Jobs Freela</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<title>Sistema de Gerenciamento de Jobs Freela</title>
 </head>
 <body>
+	<c:import url="/WEB-INF/jsp/menu.jsp" />
+	
 	<div class="container mt-3">
 		<h2>Listar Prestações de Serviço Freela</h2>
 		<form action="/prestacoes-servico/cadastrar">
@@ -55,5 +57,8 @@
 	  		<p class="mt-3">Nenhum registro localizado.</p>
 	  	</c:if>
 	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>

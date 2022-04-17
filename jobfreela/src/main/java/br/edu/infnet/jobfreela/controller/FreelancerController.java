@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.jobfreela.model.domain.Freelancer;
+import br.edu.infnet.jobfreela.model.domain.Usuario;
 import br.edu.infnet.jobfreela.model.service.FreelancerService;
 
 @Controller
@@ -33,7 +35,8 @@ public class FreelancerController {
 	}
 	
 	@PostMapping(value = "/freelancers/cadastrar")
-	public String postIncluir(Freelancer freelancer) {
+	public String postIncluir(Freelancer freelancer, @SessionAttribute("usuarioLogado") Usuario usuario) {
+		freelancer.setUsuario(usuario);
 		freelancerService.cadastrar(freelancer);
 		return "redirect:/freelancers";
 	}
