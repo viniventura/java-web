@@ -9,6 +9,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.jobfreela.model.domain.JobFreelaWeb;
+import br.edu.infnet.jobfreela.model.domain.Usuario;
 import br.edu.infnet.jobfreela.model.service.JobFreelaWebService;
 
 @Order(5)
@@ -20,6 +21,9 @@ public class JobFreelaWebLoader implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		Usuario usuario = new Usuario();
+		usuario.setId(1);
+		
 		JobFreelaWeb jobFreelaWeb = new JobFreelaWeb(
 				"E-commerce", 
 				"E-commerce para venda de produtos de papelaria", 
@@ -30,6 +34,7 @@ public class JobFreelaWebLoader implements ApplicationRunner {
 		jobFreelaWeb.setIntegracoesAPIs(new String[] { "Google" });
 		jobFreelaWeb.setSiteResponsivo(true);
 		jobFreelaWeb.setPartePronta(false);
+		jobFreelaWeb.setUsuario(usuario);
 		
 		jobFreelaWebService.cadastrar(jobFreelaWeb);
 	}

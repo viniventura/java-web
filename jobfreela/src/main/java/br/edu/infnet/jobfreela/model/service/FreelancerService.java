@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.jobfreela.model.domain.Freelancer;
@@ -17,7 +18,7 @@ public class FreelancerService {
 	private FreelancerRepository freelancerRepository;
 	
 	public Collection<Freelancer> listar(Usuario usuario){	
-		return (Collection<Freelancer>) freelancerRepository.findAll(usuario.getId());
+		return (Collection<Freelancer>) freelancerRepository.findAll(usuario.getId(), Sort.by(Sort.Direction.ASC, "nome"));
 	}
 
 	public void cadastrar(Freelancer freelancer) {

@@ -9,6 +9,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.jobfreela.model.domain.JobFreelaRevisaoTexto;
+import br.edu.infnet.jobfreela.model.domain.Usuario;
 import br.edu.infnet.jobfreela.model.service.JobFreelaRevTextoService;
 
 @Order(4)
@@ -20,6 +21,9 @@ public class JobFreelaRevTextoLoader implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		Usuario usuario = new Usuario();
+		usuario.setId(1);
+		
 		JobFreelaRevisaoTexto jobFreelaRevTexto = new JobFreelaRevisaoTexto(
 				"Tradução de monografia", 
 				"Tradução de monografia de português para o inglês", 
@@ -29,6 +33,7 @@ public class JobFreelaRevTextoLoader implements ApplicationRunner {
 		jobFreelaRevTexto.setIdiomaTextoOrigem("Português");
 		jobFreelaRevTexto.setIdiomaTextoDestino("Inglês");
 		jobFreelaRevTexto.setQtdMediaPalavras(2000);
+		jobFreelaRevTexto.setUsuario(usuario);
 		
 		jobFreelaRevTextoService.cadastrar(jobFreelaRevTexto);
 	}

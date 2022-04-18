@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.jobfreela.model.domain.JobFreelaApp;
+import br.edu.infnet.jobfreela.model.domain.Usuario;
 import br.edu.infnet.jobfreela.model.service.JobFreelaAppService;
 
 @Controller
@@ -21,8 +23,8 @@ public class JobFreelaAppController {
 	}
 	
 	@GetMapping(value = "/jobs-freela-app")
-	public String listar(Model model) {		
-		model.addAttribute("jobsFreelaApp", jobFreelaAppService.listar());	
+	public String listar(Model model, @SessionAttribute("usuarioLogado") Usuario usuario) {		
+		model.addAttribute("jobsFreelaApp", jobFreelaAppService.listar(usuario));	
 		return "jobs-freela-app/listar";
 	}
 	
@@ -33,7 +35,8 @@ public class JobFreelaAppController {
 	}
 	
 	@PostMapping(value = "/jobs-freela-app/cadastrar")
-	public String postIncluir(JobFreelaApp job) {
+	public String postIncluir(JobFreelaApp job, @SessionAttribute("usuarioLogado") Usuario usuario) {
+		job.setUsuario(usuario);
 		jobFreelaAppService.cadastrar(job);
 		return "redirect:/jobs-freela-app";
 	}

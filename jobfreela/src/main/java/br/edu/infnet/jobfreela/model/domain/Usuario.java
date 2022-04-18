@@ -23,7 +23,10 @@ public class Usuario {
 	@OneToMany
 	@JoinColumn(name = "idUsuario")
 	private List<Freelancer> solicitantes;
-	
+	@OneToMany
+	@JoinColumn(name = "idUsuario")
+	private List<JobFreela> jobsFreelas;
+
 	public Integer getId() {
 		return id;
 	}
@@ -59,5 +62,11 @@ public class Usuario {
 	}
 	public void setSolicitantes(List<Freelancer> solicitantes) {
 		this.solicitantes = solicitantes;
+	}
+	public List<JobFreela> getJobsFreelas() {
+		return jobsFreelas;
+	}
+	public void setJobsFreelas(List<JobFreela> jobsFreelas) {
+		this.jobsFreelas = jobsFreelas;
 	}
 }

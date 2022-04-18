@@ -13,6 +13,7 @@ public class JobFreelaApp extends JobFreela {
 	private boolean	partePronta;
 	
 	//private PrestacaoServicoFreela prestacaoServicoFreela;
+	
 	public JobFreelaApp() {
 	}
 	

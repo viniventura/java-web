@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -22,6 +24,9 @@ public abstract class JobFreela {
 	private String descricaoCompleta;
 	private LocalDateTime dataPublicacao;
 	private float valorHora;
+	@ManyToOne
+	@JoinColumn(name = "idUsuario")
+	private Usuario usuario;
 	
 	public JobFreela() {
 	}
@@ -92,5 +97,13 @@ public abstract class JobFreela {
 
 	public void setValorHora(float valorHora) {
 		this.valorHora = valorHora;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 }
