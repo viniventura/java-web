@@ -9,11 +9,12 @@
 	      <li class="active"><a href="/">Home</a></li>
 	      
 	      <c:if test="${not empty usuarioLogado}">
-		      <li><a href="/jobs-freela-app">Cadastrar jobs freelas de apps</a></li>
-		      <li><a href="/jobs-freela-rev-texto">Cadastrar freelas de rev.de texto</a></li>
-		      <li><a href="/jobs-freela-web">Cadastrar freelas web</a></li>
-		      <li><a href="/freelancers">Cadastrar freelancers</a></li>
-		      <li><a href="/prestacoes-servico">Cadastrar prest. de serviço freela</a></li>
+	      	  <li><a href="/usuarios">Usuários</a></li>
+		      <li><a href="/jobs-freela-app">Jobs freelas de apps</a></li>
+		      <li><a href="/jobs-freela-rev-texto">Jobs freelas de rev. de texto</a></li>
+		      <li><a href="/jobs-freela-web">Jobs freelas web</a></li>
+		      <li><a href="/freelancers">Freelancers</a></li>
+		      <li><a href="/prestacoes-servico">Prest. de serviço freela</a></li>
 	      </c:if>
 	    </ul>
 	    

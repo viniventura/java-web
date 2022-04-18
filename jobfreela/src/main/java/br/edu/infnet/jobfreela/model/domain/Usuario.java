@@ -22,10 +22,10 @@ public class Usuario {
 	private boolean admin;
 	@OneToMany
 	@JoinColumn(name = "idUsuario")
-	private List<Freelancer> solicitantes;
+	private List<Freelancer> freelancers;
 	@OneToMany
 	@JoinColumn(name = "idUsuario")
-	private List<JobFreela> jobsFreelas;
+	private List<JobFreela> jobsFreela;
 
 	public Integer getId() {
 		return id;
@@ -57,16 +57,16 @@ public class Usuario {
 	public void setAdmin(boolean admin) {
 		this.admin = admin;
 	}
-	public List<Freelancer> getSolicitantes() {
-		return solicitantes;
+	public List<Freelancer> getFreelancers() {
+		return freelancers;
 	}
-	public void setSolicitantes(List<Freelancer> solicitantes) {
-		this.solicitantes = solicitantes;
+	public void setFreelancers(List<Freelancer> freelancers) {
+		this.freelancers = freelancers;
 	}
-	public List<JobFreela> getJobsFreelas() {
-		return jobsFreelas;
+	public List<JobFreela> getJobsFreela() {
+		return jobsFreela;
 	}
-	public void setJobsFreelas(List<JobFreela> jobsFreelas) {
-		this.jobsFreelas = jobsFreelas;
+	public void setJobsFreela(List<JobFreela> jobsFreela) {
+		this.jobsFreela = jobsFreela;
 	}
 }

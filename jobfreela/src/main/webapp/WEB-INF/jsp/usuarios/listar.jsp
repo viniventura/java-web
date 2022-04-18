@@ -13,43 +13,37 @@
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
 	
 	<div class="container mt-3">
-		<h2>Listar Freelancers</h2>
-		<form action="/freelancers/cadastrar">
-			<button type="submit" class="btn btn-primary mt-3">Novo Freelancer</button>
-		</form>
-	
-		<c:if test="${not empty freelancers}">
-			<p class="mt-3 mb-3">Listagem de Freelancers (${freelancers.size()}):</p>            
+		<h2>Listar Usuários</h2>
+
+		<c:if test="${not empty usuarios}">
+			<p class="mt-3 mb-3">Listagem de Usuários (${usuarios.size()}):</p>            
 		  	<table class="table table-striped">
 			    <thead>
 			      <tr>
 			      	<th>ID</th>
 				  	<th>Nome</th>
-				    <th>CPF</th>
 				    <th>E-mail</th>
-				    <th>Data de Nascimento</th>
+			        <th>Freelancer</th>
+			        <th>Jobs Freela</th>
 			        <th>Ação</th>
 			      </tr>
 			    </thead>
 			    <tbody>
-			    	<c:forEach var="freelancer" items="${freelancers}">
+			    	<c:forEach var="usuario" items="${usuarios}">
 				      <tr>
-				      	<td>${freelancer.id}</td>
-				        <td>${freelancer.nome}</td>
-				        <td>${freelancer.cpf}</td>
-				        <td>${freelancer.email}</td>
-				        <td>
-				        	<fmt:parseDate value="${freelancer.dataNascimento}" pattern="yyyy-MM-dd" var="parsedDataNascimento" type="both" />
-							<fmt:formatDate pattern="dd/MM/yyyy" value="${parsedDataNascimento}" />
-				        </td>
-				        <td><a href="/freelancers/${freelancer.id}/excluir">Excluir</a></td>
+				      	<td>${usuario.id}</td>
+				        <td>${usuario.nome}</td>
+				        <td>${usuario.email}</td>
+				        <td>${usuario.freelancers.size()}</td>
+				        <td>${usuario.jobsFreela.size()}</td>
+				        <td><a href="/usuarios/${usuario.id}/excluir">Excluir</a></td>
 				      </tr>
 			      </c:forEach>
 			    </tbody>
 		  	</table>
 		</c:if>
 		
-		<c:if test="${empty freelancers}">
+		<c:if test="${empty usuarios}">
 	  		<p class="mt-3">Nenhum registro localizado.</p>
 	  	</c:if>
 	</div>
