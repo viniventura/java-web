@@ -3,12 +3,28 @@ package br.edu.infnet.jobfreela.model.domain;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "JobFreela")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class JobFreela {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String descricaoResumida;
 	private String descricaoCompleta;
 	private LocalDateTime dataPublicacao;
 	private float valorHora;
+	
+	public JobFreela() {
+	}
 	
 	public JobFreela(String descricaoResumida, String descricaoCompleta, 
 			LocalDateTime dataPublicacao, float valorHora) {

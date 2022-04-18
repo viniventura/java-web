@@ -23,8 +23,8 @@ public class FreelancerController {
 	}
 	
 	@GetMapping(value = "/freelancers")
-	public String listar(Model model) {		
-		model.addAttribute("freelancers", freelancerService.listar());	
+	public String listar(Model model, @SessionAttribute("usuarioLogado") Usuario usuario) {		
+		model.addAttribute("freelancers", freelancerService.listar(usuario));	
 		return "freelancers/listar";
 	}
 	

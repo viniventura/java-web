@@ -2,12 +2,20 @@ package br.edu.infnet.jobfreela.model.domain;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "JobFreelaRevisaoTexto")
 public class JobFreelaRevisaoTexto extends JobFreela {
 	private String idiomaTextoOrigem;
 	private String idiomaTextoDestino;
 	private int qtdMediaPalavras;
 	
-	private PrestacaoServicoFreela prestacaoServicoFreela;
+	//private PrestacaoServicoFreela prestacaoServicoFreela;
+	
+	public JobFreelaRevisaoTexto() {
+	}
 	
 	public JobFreelaRevisaoTexto(String descricaoResumida, String descricaoCompleta, 
 			LocalDateTime dataPublicacao, float valorHora) {
@@ -58,11 +66,11 @@ public class JobFreelaRevisaoTexto extends JobFreela {
 		this.qtdMediaPalavras = qtdMediaPalavras;
 	}
 
-	public PrestacaoServicoFreela getPrestacaoServicoFreela() {
-		return prestacaoServicoFreela;
-	}
+	//public PrestacaoServicoFreela getPrestacaoServicoFreela() {
+	//	return prestacaoServicoFreela;
+	//}
 
-	public void setPrestacaoServicoFreela(PrestacaoServicoFreela prestacaoServicoFreela) {
-		this.prestacaoServicoFreela = prestacaoServicoFreela;
-	}
+	//public void setPrestacaoServicoFreela(PrestacaoServicoFreela prestacaoServicoFreela) {
+	//	this.prestacaoServicoFreela = prestacaoServicoFreela;
+	//}
 }
