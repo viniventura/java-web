@@ -3,6 +3,7 @@ package br.edu.infnet.jobfreela.model.service;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.jobfreela.model.domain.Usuario;
@@ -23,7 +24,7 @@ public class UsuarioService {
 	}
 
 	public Collection<Usuario> listar() {
-		return (Collection<Usuario>) usuarioRepository.findAll();
+		return (Collection<Usuario>) usuarioRepository.findAll(Sort.by(Sort.Direction.ASC, "nome"));
 	}
 
 	public void excluir(Integer id) {

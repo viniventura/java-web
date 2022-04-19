@@ -10,6 +10,7 @@
 	      
 	      <c:if test="${not empty usuarioLogado}">
 	      	  <li><a href="/usuarios">Usuários</a></li>
+	      	  <li><a href="/jobs-freela">Jobs Freela</a></li>
 		      <li><a href="/jobs-freela-app">Jobs freelas de apps</a></li>
 		      <li><a href="/jobs-freela-rev-texto">Jobs freelas de rev. de texto</a></li>
 		      <li><a href="/jobs-freela-web">Jobs freelas web</a></li>

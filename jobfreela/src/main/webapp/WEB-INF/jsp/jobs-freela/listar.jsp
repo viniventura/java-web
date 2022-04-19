@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html lang="pt">
@@ -13,41 +14,38 @@
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
 	
 	<div class="container mt-3">
-		<h2>Listar Usuários</h2>
-
-		<c:if test="${not empty usuarios}">
-			<p class="mt-3 mb-3">Listagem de Usuários (${usuarios.size()}):</p>            
+		<h2>Listar Jobs Freela</h2>
+	
+		<c:if test="${not empty jobsFreela}">
+			<p class="mt-3 mb-3">Listagem de Jobs Freela (${jobsFreela.size()}):</p>            
 		  	<table class="table table-striped">
 			    <thead>
 			      <tr>
 			      	<th>ID</th>
-				  	<th>Nome</th>
-				    <th>E-mail</th>
-			        <th>Freelancer</th>
-			        <th>Jobs Freela</th>
-			        <c:if test="${usuarioLogado.admin}">
-			        	<th>Ação</th>
-			        </c:if>
+				  	<th>Descrição Resumida</th>
+				    <th>Data de Publicação</th>
+				    <th>Valor Hora</th>
+			        <th>Ação</th>
 			      </tr>
 			    </thead>
 			    <tbody>
-			    	<c:forEach var="usuario" items="${usuarios}">
+			    	<c:forEach var="job" items="${jobsFreela}">
 				      <tr>
-				      	<td>${usuario.id}</td>
-				        <td>${usuario.nome}</td>
-				        <td>${usuario.email}</td>
-				        <td>${usuario.freelancers.size()}</td>
-				        <td>${usuario.jobsFreela.size()}</td>
-				        <c:if test="${usuarioLogado.admin}">
-				        	<td><a href="/usuarios/${usuario.id}/excluir">Excluir</a></td>
-				        </c:if>
+				      	<td>${job.id}</td>
+				        <td>${job.descricaoResumida}</td>
+				        <td>
+				        	<fmt:parseDate value="${job.dataPublicacao}" pattern="yyyy-MM-dd" var="parsedDataPublicacao" type="both" />
+							<fmt:formatDate pattern="dd/MM/yyyy" value="${parsedDataPublicacao}" />
+				        </td>
+				        <td>${job.valorHora}</td>
+				        <td><a href="/jobs-freela/${job.id}/excluir">Excluir</a></td>
 				      </tr>
 			      </c:forEach>
 			    </tbody>
 		  	</table>
 		</c:if>
 		
-		<c:if test="${empty usuarios}">
+		<c:if test="${empty jobsFreela}">
 	  		<p class="mt-3">Nenhum registro localizado.</p>
 	  	</c:if>
 	</div>
