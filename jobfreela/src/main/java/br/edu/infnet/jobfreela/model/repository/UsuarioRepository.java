@@ -14,5 +14,6 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Integer> {
 
 	@Query("from Usuario u where email = :email and senha = :senha")
 	Usuario autenticar(String email, String senha);
+	
 	Collection<Usuario> findAll(Sort by);
 }
