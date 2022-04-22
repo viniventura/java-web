@@ -4,12 +4,14 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -26,9 +28,11 @@ public class Freelancer {
 	@JoinColumn(name = "idUsuario")
 	private Usuario usuario;
 	
-	//private List<PrestacaoServicoFreela> servicosFreela;
+	@OneToOne(mappedBy = "jobFreela")
+	private PrestacaoServicoFreela prestacaoServicoFreela;
 	
-	public Freelancer() {}
+	public Freelancer() {
+	}
 	
 	public Freelancer(String nome, String cpf, String email, String dataNascimento) {
 		this.nome = nome;
@@ -49,8 +53,6 @@ public class Freelancer {
 		sb.append(email);
 		sb.append(";");
 		sb.append(dataNascimento.format(dateTimeFormat));
-		//sb.append(";");
-		//sb.append(servicosFreela.size());
 		
 		return sb.toString();
 	}
@@ -101,11 +103,4 @@ public class Freelancer {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	//public List<PrestacaoServicoFreela> getServicosFreela() { 
-		 //return servicosFreela; 
-	//}
-	 
-	 //public void setServicosFreela(List<PrestacaoServicoFreela> servicosFreela) {
-		 //this.servicosFreela = servicosFreela; 
-	 //} 
 }

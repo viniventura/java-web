@@ -23,7 +23,7 @@
 			      	<th>ID</th>
 				  	<th>Nome</th>
 				    <th>E-mail</th>
-			        <th>Freelancer</th>
+			        <th>Freelancers</th>
 			        <th>Jobs Freela</th>
 			        <c:if test="${usuarioLogado.admin}">
 			        	<th>Ação</th>

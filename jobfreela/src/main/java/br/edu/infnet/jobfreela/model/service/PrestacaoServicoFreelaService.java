@@ -1,34 +1,36 @@
 package br.edu.infnet.jobfreela.model.service;
 
-import java.time.LocalDateTime;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.jobfreela.model.domain.PrestacaoServicoFreela;
+import br.edu.infnet.jobfreela.model.domain.Usuario;
+import br.edu.infnet.jobfreela.model.repository.PrestacaoServicoFreelaRepository;
 
 @Service
 public class PrestacaoServicoFreelaService {
-	private static Map<Integer, PrestacaoServicoFreela> mapa = new HashMap<Integer, PrestacaoServicoFreela>();
-	private static Integer key = 1;
 	
-	public Collection<PrestacaoServicoFreela> listar(){	
-		return mapa.values();
-	}
-
-	public void cadastrar(PrestacaoServicoFreela prestacaoServico) {
-		prestacaoServico.setId(key++);
-		prestacaoServico.setDataInicio(LocalDateTime.now());
-		mapa.put(prestacaoServico.getId(), prestacaoServico);
+	private PrestacaoServicoFreelaRepository prestacaoServicoFreelaRepository;
+	
+	public Collection<PrestacaoServicoFreela> listar(Usuario usuario) {
+		return prestacaoServicoFreelaRepository.findAll(usuario.getId(), Sort.by(Sort.Direction.ASC, "dataInicio"));
 	}
 	
-	public void excluir(Integer idPrestacaoServico) {
-		mapa.remove(idPrestacaoServico);
+	public Collection<PrestacaoServicoFreela> listar() {
+		return prestacaoServicoFreelaRepository.findAll(Sort.by(Sort.Direction.ASC, "dataInicio"));
 	}
 	
-	public PrestacaoServicoFreela obter(Integer idPrestacaoServico) {
-		return mapa.get(idPrestacaoServico);
+	public void cadastrar(PrestacaoServicoFreela prestacaoServicoFreela) {
+		prestacaoServicoFreelaRepository.save(prestacaoServicoFreela);
+	}
+	
+	public void excluir(Integer idPrestacaoServicoFreela) {
+		prestacaoServicoFreelaRepository.deleteById(idPrestacaoServicoFreela);
+	}
+	
+	public PrestacaoServicoFreela obter(Integer idPrestacaoServicoFreela) {
+		return prestacaoServicoFreelaRepository.findById(idPrestacaoServicoFreela).orElse(null);
 	}
 }

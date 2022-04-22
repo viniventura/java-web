@@ -30,4 +30,8 @@ public class UsuarioService {
 	public void excluir(Integer id) {
 		usuarioRepository.deleteById(id);
 	}
+	
+	public Usuario obter(Integer idUsuario) {
+		return usuarioRepository.findById(idUsuario).orElse(null);
+	}
 }

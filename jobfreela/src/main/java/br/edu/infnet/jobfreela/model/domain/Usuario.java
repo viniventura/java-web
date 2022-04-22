@@ -27,6 +27,9 @@ public class Usuario {
 	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name = "idUsuario")
 	private List<JobFreela> jobsFreela;
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+	@JoinColumn(name = "idUsuario")
+	private List<PrestacaoServicoFreela> prestacoesServicoFreela;
 
 	public Integer getId() {
 		return id;
@@ -69,5 +72,11 @@ public class Usuario {
 	}
 	public void setJobsFreela(List<JobFreela> jobsFreela) {
 		this.jobsFreela = jobsFreela;
+	}
+	public List<PrestacaoServicoFreela> getPrestacoesServicoFreela() {
+		return prestacoesServicoFreela;
+	}
+	public void setPrestacoesServicoFreela(List<PrestacaoServicoFreela> prestacoesServicoFreela) {
+		this.prestacoesServicoFreela = prestacoesServicoFreela;
 	}
 }

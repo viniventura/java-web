@@ -2,7 +2,6 @@ package br.edu.infnet.jobfreela.model.service;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -30,7 +29,7 @@ public class JobFreelaAppService {
 		jobFreelaAppRepository.deleteById(idJob);
 	}
 	
-	public Optional<JobFreelaApp> obter(Integer idJob) {
-		return jobFreelaAppRepository.findById(idJob);
+	public JobFreelaApp obter(Integer idJob) {
+		return jobFreelaAppRepository.findById(idJob).orElse(null);
 	}
 }

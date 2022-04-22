@@ -11,6 +11,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,9 +25,13 @@ public abstract class JobFreela {
 	private String descricaoCompleta;
 	private LocalDateTime dataPublicacao;
 	private float valorHora;
+	
 	@ManyToOne
 	@JoinColumn(name = "idUsuario")
 	private Usuario usuario;
+	
+	@OneToOne(mappedBy = "jobFreela")
+	private PrestacaoServicoFreela prestacaoServicoFreela;
 	
 	public JobFreela() {
 	}
@@ -105,5 +110,13 @@ public abstract class JobFreela {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
+	}
+
+	public PrestacaoServicoFreela getPrestacaoServicoFreela() {
+		return prestacaoServicoFreela;
+	}
+
+	public void setPrestacaoServicoFreela(PrestacaoServicoFreela prestacaoServicoFreela) {
+		this.prestacaoServicoFreela = prestacaoServicoFreela;
 	}
 }
