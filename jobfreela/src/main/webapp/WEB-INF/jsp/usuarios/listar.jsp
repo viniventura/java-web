@@ -12,11 +12,11 @@
 <body>
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
 	
-	<div class="container mt-3">
+	<div class="container">
 		<h2>Listar Usuários</h2>
 
 		<c:if test="${not empty usuarios}">
-			<p class="mt-3 mb-3">Listagem de Usuários (${usuarios.size()}):</p>            
+			<p class="form-group">Listagem de Usuários (${usuarios.size()}):</p>            
 		  	<table class="table table-striped">
 			    <thead>
 			      <tr>
@@ -25,6 +25,7 @@
 				    <th>E-mail</th>
 			        <th>Freelancers</th>
 			        <th>Jobs Freela</th>
+			        <th>Prestações de Serviço</th>
 			        <c:if test="${usuarioLogado.admin}">
 			        	<th>Ação</th>
 			        </c:if>
@@ -38,6 +39,7 @@
 				        <td>${usuario.email}</td>
 				        <td>${usuario.freelancers.size()}</td>
 				        <td>${usuario.jobsFreela.size()}</td>
+				        <td>${usuario.prestacoesServicoFreela.size()}</td>
 				        <c:if test="${usuarioLogado.admin}">
 				        	<td><a href="/usuarios/${usuario.id}/excluir">Excluir</a></td>
 				        </c:if>
@@ -48,7 +50,7 @@
 		</c:if>
 		
 		<c:if test="${empty usuarios}">
-	  		<p class="mt-3">Nenhum registro localizado.</p>
+	  		<p class="form-group">Nenhum registro localizado.</p>
 	  	</c:if>
 	</div>
 	

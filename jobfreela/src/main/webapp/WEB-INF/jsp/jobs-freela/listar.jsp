@@ -13,11 +13,11 @@
 <body>
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
 	
-	<div class="container mt-3">
+	<div class="container">
 		<h2>Listar Jobs Freela</h2>
 	
 		<c:if test="${not empty jobsFreela}">
-			<p class="mt-3 mb-3">Listagem de Jobs Freela (${jobsFreela.size()}):</p>            
+			<p class="form-group">Listagem de Jobs Freela (${jobsFreela.size()}):</p>            
 		  	<table class="table table-striped">
 			    <thead>
 			      <tr>
@@ -46,7 +46,7 @@
 		</c:if>
 		
 		<c:if test="${empty jobsFreela}">
-	  		<p class="mt-3">Nenhum registro localizado.</p>
+	  		<p class="form-group">Nenhum registro localizado.</p>
 	  	</c:if>
 	</div>
 	

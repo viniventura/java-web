@@ -53,19 +53,22 @@ public class FreelancerTeste {
 					"1990-05-28"
 		);
 		
-		PrestacaoServicoFreela prestacaoServico1 = new PrestacaoServicoFreela("31/12/2022");
+		PrestacaoServicoFreela prestacaoServico1 = new PrestacaoServicoFreela();
+		prestacaoServico1.setDataFim("2022-12-31");
 		prestacaoServico1.setDescricao("Descrição da prestação de serviço 1");
 		prestacaoServico1.setEmDia(true);
 		prestacaoServico1.setFreelancer(freelancer);
 		prestacaoServico1.setJobFreela(jobFreelaApp);
 		
-		PrestacaoServicoFreela prestacaoServico2 = new PrestacaoServicoFreela("31/12/2022");
+		PrestacaoServicoFreela prestacaoServico2 = new PrestacaoServicoFreela();
+		prestacaoServico2.setDataFim("2022-12-31");
 		prestacaoServico2.setDescricao("Descrição da prestação de serviço 2");
 		prestacaoServico2.setEmDia(false);
 		prestacaoServico2.setFreelancer(freelancer);
 		prestacaoServico2.setJobFreela(jobFreelaRevTexto);
 		
-		PrestacaoServicoFreela prestacaoServico3 = new PrestacaoServicoFreela("31/12/2022");
+		PrestacaoServicoFreela prestacaoServico3 = new PrestacaoServicoFreela();
+		prestacaoServico3.setDataFim("2022-12-31");
 		prestacaoServico3.setDescricao("Descrição da prestação de serviço 3");
 		prestacaoServico3.setEmDia(true);
 		prestacaoServico3.setFreelancer(freelancer);
@@ -75,8 +78,6 @@ public class FreelancerTeste {
 		servicosFreela.add(prestacaoServico1);
 		servicosFreela.add(prestacaoServico2);
 		servicosFreela.add(prestacaoServico3);
-		
-		//freelancer.setServicosFreela(servicosFreela);
 		
 		System.out.println(freelancer);
 	}

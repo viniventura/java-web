@@ -11,27 +11,27 @@
 <body>
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
 
-	<div class="container mt-3">
+	<div class="container">
 		<h2>Cadastro de Jobs Freelancers de Apps</h2>
 		
 		<form action="/jobs-freela-app/cadastrar" method="post">
 		
-			<div class="mt-3 mb-3">
+			<div class="form-group">
 		      <label for="descricaoResumida" class="mb-2">Descrição resumida:</label>
 		      <input type="text" class="form-control" name="descricaoResumida" placeholder="Entre com a descrição resumida">
 		    </div>
 		    
-		    <div class="mt-3 mb-3">
+		    <div class="form-group">
 		      <label for="descricaoCompleta" class="mb-2">Descrição completa:</label>
 		      <textarea class="form-control" name="descricaoCompleta" rows="3" placeholder="Entre com a descrição completa"></textarea>
 		    </div>
 		    
-			<div class="mt-3 mb-3">
+			<div class="form-group">
 	      		<label for="valorHora" class="mb-2">Valor hora:</label>
 	      		<input type="text" class="form-control" name="valorHora" placeholder="Entre com o valor hora a ser pago pelo job">
 	    	</div>
 			
-			<div class="mt-3 mb-3">
+			<div class="form-group">
 				<label for="plataformasSuportadas" class="form-label">Plataformas suportadas (utilize a tecla Ctrl para selecionar mais de um):</label>
 			    <select multiple class="form-select" name="plataformasSuportadas">
 			      <option>Android</option>
@@ -40,7 +40,7 @@
 			    </select>
 			</div>
 			
-			<div class="mt-3 mb-3">
+			<div class="form-group">
 				<label for="integracoesAPIs" class="form-label">Integrações com APIs (utilize a tecla Ctrl para selecionar mais de um):</label>
 			    <select multiple class="form-select" name="integracoesAPIs">
 			      <option>Twitter</option>
@@ -50,7 +50,7 @@
 			    </select>
 			</div>
 			
-			<div class="mt-3 mb-3 form-check">
+			<div class="form-group form-check">
 			    <input type="checkbox" class="form-check-input" name="partePronta" value="true">
 			    <label class="form-check-label" for="partePronta">Alguma parte pronta?</label>
 		  	</div>

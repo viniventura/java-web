@@ -11,11 +11,11 @@
 	      <c:if test="${not empty usuarioLogado}">
 	      	  <li><a href="/usuarios">Usuários</a></li>
 	      	  <li><a href="/jobs-freela">Jobs Freela</a></li>
-		      <li><a href="/jobs-freela-app">Jobs freelas de apps</a></li>
-		      <li><a href="/jobs-freela-rev-texto">Jobs freelas de rev. de texto</a></li>
+		      <li><a href="/jobs-freela-app">Jobs freelas apps</a></li>
+		      <li><a href="/jobs-freela-rev-texto">Jobs freelas rev. de texto</a></li>
 		      <li><a href="/jobs-freela-web">Jobs freelas web</a></li>
 		      <li><a href="/freelancers">Freelancers</a></li>
-		      <li><a href="/prestacoes-servico">Prest. de serviço freela</a></li>
+		      <li><a href="/prestacoes-servico">Prest. de serviço</a></li>
 	      </c:if>
 	    </ul>
 	    

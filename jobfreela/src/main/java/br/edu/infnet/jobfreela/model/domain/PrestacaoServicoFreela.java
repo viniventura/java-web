@@ -38,6 +38,10 @@ public class PrestacaoServicoFreela {
 	@JoinColumn(name = "idUsuario")
 	private Usuario usuario;
 	
+	public PrestacaoServicoFreela() {
+		this.dataInicio = LocalDateTime.now();
+	}
+			
 	public PrestacaoServicoFreela(String dataFim) {
 		this.dataInicio = LocalDateTime.now();
 		this.dataFim =  LocalDate.parse(dataFim, DateTimeFormatter.ofPattern("uuuu-MM-dd")).atStartOfDay();
@@ -82,9 +86,9 @@ public class PrestacaoServicoFreela {
 	public LocalDateTime getDataFim() {
 		return dataFim;
 	}
-	
-	public void setDataFim(LocalDateTime dataFim) {
-		this.dataFim = dataFim;
+
+	public void setDataFim(String dataFim) {
+		this.dataFim = LocalDate.parse(dataFim, DateTimeFormatter.ofPattern("uuuu-MM-dd")).atStartOfDay();
 	}
 	
 	public boolean isEmDia() {

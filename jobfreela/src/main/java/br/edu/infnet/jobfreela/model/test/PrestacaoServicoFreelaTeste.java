@@ -28,7 +28,8 @@ public class PrestacaoServicoFreelaTeste {
 		jobFreelaApp.setIntegracoesAPIs(new String[] { "Google", "Facebook", "LinkedIn" });
 		jobFreelaApp.setPartePronta(false);
 		
-		PrestacaoServicoFreela prestacaoServico = new PrestacaoServicoFreela("31/12/2022");
+		PrestacaoServicoFreela prestacaoServico = new PrestacaoServicoFreela();
+		prestacaoServico.setDataFim("2022-12-31");
 		prestacaoServico.setDescricao("Descrição da prestação de serviço 1");
 		prestacaoServico.setEmDia(true);
 		

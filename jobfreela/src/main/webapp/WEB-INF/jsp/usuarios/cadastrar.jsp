@@ -11,22 +11,22 @@
 <body>
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
 	
-	<div class="container mt-3">
+	<div class="container">
 		<h2>Cadastro de Usuários</h2>
 		
 		<form action="/usuarios/cadastrar" method="post">
 		
-			<div class="mt-3 mb-3">
+			<div class="form-group">
 		      <label for="nome" class="mb-2">Nome:</label>
 		      <input type="text" class="form-control" name="nome" placeholder="Entre com o nome" value="Dona Maria das Dores">
 		    </div>
 		    
-			<div class="mt-3 mb-3">
+			<div class="form-group">
 	      		<label for="email" class="mb-2">E-mail:</label>
 	      		<input type="email" class="form-control" name="email" placeholder="Entre com o e-mail" value="maria@maria.com">
 	    	</div>
 	    	
-	    	<div class="mt-3 mb-3">
+	    	<div class="form-group">
 		      <label for="senha" class="mb-2">Senha:</label>
 		      <input type="password" class="form-control" name="senha" placeholder="Entre com a senha" value="123">
 		    </div>

@@ -11,25 +11,42 @@
 <body>
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
 	
-	<div class="container mt-3">
+	<div class="container">
 		<h2>Cadastro de Prestações de Serviço Freela</h2>
 		
-		<form action="/prestacoes-servico/cadastrar" method="post">
-		
-			<div class="mt-3 mb-3">
+		<form action="/prestacoes-servico/cadastrar" method="post">		
+			<div class="form-group">
 		      <label for="descricao" class="mb-2">Descrição:</label>
 		      <input type="text" class="form-control" name="descricao" placeholder="Entre com a descrição">
 		    </div>
 	    	
-	    	<div class="mt-3 mb-3">
+	    	<div class="form-group">
 	      		<label for="dataFim" class="mb-2">Data fim:</label>
 	      		<input type="date" class="form-control" name="dataFim" placeholder="Entre com a data fim">
 	    	</div>
 		    
-		    <div class="mt-3 mb-3 form-check">
+		    <div class="form-group form-check">
 			    <input type="checkbox" class="form-check-input" name="emDia" value="true">
 			    <label class="form-check-label" for="emDia">Em dia?</label>
 		  	</div>
+		  	
+		  	<div class="form-group form-check">
+		  		<label for="freelancer">Freelancer:</label>
+			    <select class="form-control" name="freelancer.id">
+			    	<c:forEach var="freelancer" items="${freelancers}">
+			    		<option value="${freelancer.id}">${freelancer.nome}</option>
+			    	</c:forEach>
+			    </select>
+    		</div>
+    		
+    		<div class="form-group form-check">
+		  		<label for="jobFreela">Job Freela:</label>
+			    <select class="form-control" name="idJobFreela">
+			    	<c:forEach var="jobFreela" items="${jobsFreela}">
+			    		<option value="${jobFreela.id}">${jobFreela.descricaoResumida}</option>
+			    	</c:forEach>	    	
+			    </select>
+    		</div>
 		  	
 			<button type="submit" class="btn btn-primary">Cadastrar</button>
 		</form>

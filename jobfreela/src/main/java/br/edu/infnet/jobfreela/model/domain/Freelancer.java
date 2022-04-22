@@ -28,9 +28,6 @@ public class Freelancer {
 	@JoinColumn(name = "idUsuario")
 	private Usuario usuario;
 	
-	@OneToOne(mappedBy = "jobFreela")
-	private PrestacaoServicoFreela prestacaoServicoFreela;
-	
 	public Freelancer() {
 	}
 	

@@ -13,14 +13,14 @@
 <body>
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
 	
-	<div class="container mt-3">
+	<div class="container">
 		<h2>Listar Jobs Freela de Revisão de Texto</h2>
 		<form action="/jobs-freela-rev-texto/cadastrar">
-			<button type="submit" class="btn btn-primary mt-3">Novo Job Freela Revisão de Texto</button>
+			<button type="submit" class="btn btn-primary">Novo Job Freela Revisão de Texto</button>
 		</form>
 	
 		<c:if test="${not empty jobsFreelaRevTexto}">
-			<p class="mt-3 mb-3">Listagem de Jobs Freela de Revisão de Texto (${jobsFreelaRevTexto.size()}):</p>            
+			<p class="form-group">Listagem de Jobs Freela de Revisão de Texto (${jobsFreelaRevTexto.size()}):</p>            
 		  	<table class="table table-striped">
 			    <thead>
 			      <tr>
@@ -55,7 +55,7 @@
 		</c:if>
 		
 		<c:if test="${empty jobsFreelaRevTexto}">
-	  		<p class="mt-3">Nenhum registro localizado.</p>
+	  		<p class="form-group">Nenhum registro localizado.</p>
 	  	</c:if>
 	</div>
 	

@@ -13,14 +13,14 @@
 <body>
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
 	
-	<div class="container mt-3">
+	<div class="container">
 		<h2>Listar Prestações de Serviço Freela</h2>
 		<form action="/prestacoes-servico/cadastrar">
-			<button type="submit" class="btn btn-primary mt-3">Nova Prestação Serviço Freela</button>
+			<button type="submit" class="btn btn-primary">Nova Prestação Serviço Freela</button>
 		</form>
 	
 		<c:if test="${not empty prestacoesServico}">
-			<p class="mt-3 mb-3">Listagem de Prestações de Serviço Freela (${prestacoesServico.size()}):</p>            
+			<p class="form-group">Listagem de Prestações de Serviço Freela (${prestacoesServico.size()}):</p>            
 		  	<table class="table table-striped">
 			    <thead>
 			      <tr>
@@ -29,6 +29,8 @@
 				    <th>Data Início</th>
 				    <th>Data Fim</th>
 			        <th>Em dia?</th>
+			        <th>Freelancer</th>
+			        <th>Job Freela</th>
 			        <th>Ação</th>
 			      </tr>
 			    </thead>
@@ -46,6 +48,8 @@
 							<fmt:formatDate pattern="dd/MM/yyyy" value="${parsedDataFim}" />
 				        </td>
 				        <td>${prestacaoServico.emDia ? "Sim" : "Não"}</td>
+				        <td>${prestacaoServico.freelancer.nome}</td>
+				        <td>${prestacaoServico.jobFreela.descricaoResumida}</td>
 				        <td><a href="/prestacoes-servico/${prestacaoServico.id}/excluir">Excluir</a></td>
 				      </tr>
 			      </c:forEach>
@@ -54,7 +58,7 @@
 		</c:if>
 		
 		<c:if test="${empty prestacoesServico}">
-	  		<p class="mt-3">Nenhum registro localizado.</p>
+	  		<p class="form-group">Nenhum registro localizado.</p>
 	  	</c:if>
 	</div>
 	

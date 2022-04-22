@@ -9,7 +9,7 @@
 <title>Sistema de Gerenciamento de Jobs Freela</title>
 </head>
 <body>
-<div class="container mt-3">
+<div class="container">
   <h2>Autenticação</h2>
   
   <c:if test="${not empty msgErroLogin}">

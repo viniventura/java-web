@@ -13,14 +13,14 @@
 <body>
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
 	
-	<div class="container mt-3">
+	<div class="container">
 		<h2>Listar Jobs Freela de Apps</h2>
 		<form action="/jobs-freela-app/cadastrar">
-			<button type="submit" class="btn btn-primary mt-3">Novo Job Freela App</button>
+			<button type="submit" class="btn btn-primary">Novo Job Freela App</button>
 		</form>
 	
 		<c:if test="${not empty jobsFreelaApp}">
-			<p class="mt-3 mb-3">Listagem de Jobs Freela de Apps (${jobsFreelaApp.size()}):</p>            
+			<p class="form-group">Listagem de Jobs Freela de Apps (${jobsFreelaApp.size()}):</p>            
 		  	<table class="table table-striped">
 			    <thead>
 			      <tr>
@@ -55,7 +55,7 @@
 		</c:if>
 		
 		<c:if test="${empty jobsFreelaApp}">
-	  		<p class="mt-3">Nenhum registro localizado.</p>
+	  		<p class="form-group">Nenhum registro localizado.</p>
 	  	</c:if>
 	</div>
 	
